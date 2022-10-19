@@ -1,0 +1,116 @@
+{
+    "sales-product": [
+        {
+            "id": 1,
+            "discount": 10,
+            "imageUrl": "../assets/watch.png",
+            "productPrice": 99,
+            "productName": "COROS PACE 2 Sport Watch",
+            "maker": "HEAD",
+            "series": "ProSport.it",
+            "extras": {
+              "overview": "loremLorem 11111 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "description": "Lorem 11111 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "shipping": "Lorem 11111 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+            }
+        },
+        {
+            "id": 2,
+            "discount": 25,
+            "imageUrl": "../assets/shoe.png",
+            "productPrice": 120,
+            "productName": "Nike Air Zoom Pegassus 39",
+            "maker": "NIKE",
+            "series": "",
+            "extras": {
+              "overview": "loremLorem 11111 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "description": "Lorem 11111 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "shipping": "Lorem 11111 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+            }
+        },
+        {
+            "id": 3,
+            "discount": 5,
+            "imageUrl": "../assets/girl.png",
+            "productPrice": 57,
+            "productName": "Nike Dri-FIT Strike",
+            "maker": "HEAD",
+            "series": "ProSport.it",
+            "extras": {
+              "overview": "loremLorem 3333 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "description": "Lorem 33333 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "shipping": "Lorem 33333 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+            }
+        },
+        {
+            "id": 4,
+            "discount": 25,
+            "imageUrl": "../assets/socks.png",
+            "productPrice": 120,
+            "productName": "Nike Dri-FIT Academy",
+            "maker": "NIKE",
+            "series": "ProSport.it",
+            "extras": {
+              "overview": "loremLorem 4444 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "description": "Lorem 4444  DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "shipping": "Lorem 4444  SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+            }
+        },
+        {
+            "id": 5,
+            "discount": 32,
+            "imageUrl": "../assets/boybag.png",
+            "productPrice": 175,
+            "productName": "Training backpack",
+            "maker": "NIKE",
+            "series": "ProSport.it",
+            "extras": {
+              "overview": "loremLorem 55555 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "description": "Lorem 55555 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "shipping": "Lorem 55555 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+            }
+        },
+        {
+            "id": 6,
+            "discount": 8,
+            "imageUrl": "../assets/bat.png",
+            "productPrice": 110,
+            "productName": "Tennis rackuet",
+            "maker": "HEAD",
+            "series": "ProSport.it",
+            "extras": {
+              "overview": "loremLorem 666666 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "description": "Lorem 666666 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "shipping": "Lorem 666666 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+            }
+        },
+        {
+            "id": 7,
+            "discount": 12,
+            "imageUrl": "../assets/cap.png",
+            "productPrice": 45,
+            "productName": "Dri-sport visor",
+            "maker": "HEAD",
+            "series": "ProSport.it",
+            "extras": {
+              "overview": "loremLorem 7777777 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "description": "Lorem 7777777 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "shipping": "Lorem 7777777 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+            }
+        },
+        {
+            "id": 9,
+            "discount": 25,
+            "imageUrl": "../assets/boy.png",
+            "productPrice": 119,
+            "productName": "ADIDAS sweat-up",
+            "maker": "ADIDAS",
+            "series": "Dream",
+            "extras": {
+              "overview": "loremLorem 99999 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "description": "Lorem 99999 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+              "shipping": "Lorem 99999 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+            }
+        }
+    ]
+}
