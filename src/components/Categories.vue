@@ -48,6 +48,7 @@
         background-color: aliceblue;
         height: auto;
         padding: 40px 80px;
+        text-align: left;
     }
 
     .container {

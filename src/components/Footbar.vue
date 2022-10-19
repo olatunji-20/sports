@@ -55,6 +55,7 @@
         width: 100%;
         height: auto;
         background-color: #28282d;
+        text-align: left;
         color: white;
         display: flex;
         flex-direction: row;

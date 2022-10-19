@@ -14,7 +14,7 @@
                         <p>{{ product.productName }}</p>
                         <h5 style="display: inline;">{{ product.maker }} |</h5> <p style="display: inline">{{ product.series }}</p>
                         <p>Sizes: <span style="font-weight: bolder">S M L XL</span></p>
-                        <button class="view"><router-link to="/Stand">View the item</router-link></button>
+                        <button class="view"><router-link :to="'/Stand/' + product.id">View the item</router-link></button>
                 </div>
             </div>
         </div>
@@ -61,6 +61,7 @@ export default {
         height: auto;
         background-color: #FFFFFF;
         padding: 60px 80px 0px;
+        text-align: left;
     }
 
 
