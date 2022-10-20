@@ -26,7 +26,7 @@
                     <li>Footwear</li>
                     <li>Apparel</li>
                     <li>Bestsellers</li>
-                    <li>Special deals</li>
+                    <li><router-link to="/cart">Special deals</router-link></li>
                 </ul>
             </div>
         </div>

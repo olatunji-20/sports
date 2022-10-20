@@ -17,9 +17,33 @@ export async function getProduct({commit}, id) {
 }
 
 export function addToCart({ commit, getters }, payload) {
-    // let cart = getters.cart
-    // let 
-    console.log(payload)
-    console.log("quant" + payload.quantity)
-    console.log("prod" + payload.product)
+    let cart = getters.cart
+    let data = payload.product
+    data["quantity"] = payload.quantity
+
+    cart.push(data)
+    commit("setCart", cart)
+    alert(data.quantity + " " + data.productName + " has been added to your cart")
+    console.log(cart)
+}
+
+export function removeItem({ commit, getters }, id) {
+    console.log("drrr", id)
+    
+    if(confirm("Do you want to remove this item from your cart?")) {
+        let cart = []
+        for(let i = 0; i < getters.cart.length; i++) {
+            let prod = getters.cart[i]
+            try {
+                if(prod.id !== id) {
+                    cart.push(prod)
+                }
+            }catch(error) {
+                console.log(error)
+            }
+        }
+        commit("setCart", cart)
+
+    }
+    return false
 }

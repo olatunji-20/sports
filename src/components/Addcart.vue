@@ -29,6 +29,8 @@ button {
     width: 400px;
     height: 40px;
     background-color: aqua;
+    border: 0px;
+    border-radius: 5px;
 }
 
 </style>
