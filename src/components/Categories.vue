@@ -44,18 +44,18 @@
 <style scoped>
     section {
         width: 100%;
-        border: 2px solid saddlebrown;
-        background-color: aliceblue;
+        /* border: 2px solid saddlebrown; */
+        /* background-color: aliceblue; */
         height: auto;
-        padding: 40px 80px;
+        padding: 2.5rem 5rem;
         text-align: left;
     }
 
     .container {
         width: 100%;
         height: auto;
-        border: 2px solid firebrick;
-        margin: 30px auto;
+        /* border: 2px solid firebrick; */
+        margin: 1.875rem auto;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -63,10 +63,10 @@
     }
 
     .cate {
-        width: 340px;
-        height: 230px;
-        border: 1px solid brown;
-        margin: 10px;
+        width: 21.25rem;
+        height: 14.375rem;
+        /* border: 1px solid brown; */
+        margin: 0.625rem;
         border-radius: 6px;
         text-align: center;
     }
@@ -83,7 +83,7 @@
     }
     .cate h3 {
         position: relative;
-        bottom: 55px;
+        bottom: 3.4375rem;
         z-index: 9;
         color: white;
     }
@@ -94,6 +94,9 @@
         section {
             padding: 30px 10px;
             height: auto;
+        }
+        h1 {
+            text-indent: 20px;
         }
     }
     

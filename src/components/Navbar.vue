@@ -2,31 +2,37 @@
     <section>
         <div>
             <section class="lff">
-                <div class="logo-container">
-                    <img src="../../public/assets/lovesport.png" class="logo" />
-                </div>
-                <!-- <ul class="options">
-                    <li>Men</li>
-                    <li>Women</li>
-                    <li>Kids</li>
-                </ul> -->
+                <router-link to="/">
+                    <div class="logo-container">
+                        <img src="../../public/assets/lovesport.png" class="logo" />
+                    </div>
+                </router-link>
                 <div class="search-bar">
                     <input placeholder="Search..." />
                     <div class="love"><img src="../../public/assets/love.png" alt="love" class="luv"></div>
                     <div class="love"><img src="../../public/assets/picon.png" alt="" class="luv"></div>
                 </div>
             </section>
+            <cartboard />
             <div class="under">
                 <ul>
-                    <li @mouseenter="dropdown" @mouseleave="undrop" class="dropdown">Sports</li>
-                        <div v-show="drop" class="dropdown-content">
-                            <p>fhhfifie</p>
-                            <p>jdhhfioi</p>
+                    <li @mouseenter="dropdownA" @mouseleave="undropA" class="dropdown">Sports</li>
+                        <div @mouseenter="dropdownA" @mouseleave="undropA" v-show="dropA" class="dropdown-content">
+                            <p>Packs & Bags</p>
+                            <p>Bikes</p>
+                            <p>Ball sports</p>
+                            <p>Protection</p>
                         </div>
-                    <li>Footwear</li>
+                    <li @mouseenter="dropdownB" @mouseleave="undropB" class="dropdown">Footwear</li>
+                        <div @mouseenter="dropdownB" @mouseleave="undropB" v-show="dropB" class="dropdown-contentB">
+                            <p>Snowboard boots</p>
+                            <p>Outdoor shoes</p>
+                            <p>Running shoes</p>
+                            <p>Fitness</p>
+                            <p>Sport shoes</p>
+                        </div>
                     <li>Apparel</li>
-                    <li>Bestsellers</li>
-                    <li><router-link to="/cart">Special deals</router-link></li>
+                    <li>Special deals</li>
                 </ul>
             </div>
         </div>
@@ -34,51 +40,60 @@
 </template>
 
 <script>
+import Cartboard from './Cartboard.vue';
 export default {
-    name: 'Navbar',
+    name: "Navbar",
     data() {
         return {
-            drop: false
-        }
+            dropA: false,
+            dropB: false
+        };
     },
     methods: {
-        dropdown() {
-            this.drop = true
+        dropdownA() {
+            this.dropA = true;
         },
-        undrop() {
-            this.drop =  false
+        undropA() {
+            this.dropA = false;
+        },
+        dropdownB() {
+            this.dropB = true;
+        },
+        undropB() {
+            this.dropB = false;
         }
     },
+    components: { Cartboard }
 }
 </script>
 
 <style scoped>
 section {
-    border: 4px solid red;
+    border: 0px solid red;
 }
 
 .lff {
     /* border: 1px solid green; */
     width: 100%;
-    height: 80px;
-    background-color: black;
+    height: 5rem;
+    background-color: #28282d;
     text-align: left;
 }
 
-.main-container {
+/* .main-container {
     border: 9px solid blueviolet;
     width: 100%;
     height: auto;
-    padding: 70px 0px 0px;
-}
+    padding: 4.375rem 0rem 0rem;
+} */
 .logo-container {
-    width: 200px;       
-    height: 35px;
-    border: 1px solid red;
+    width: 12.5rem;       
+    height: 2.1875rem;
+    /* border: 1px solid red; */
     position: relative;
     float: left;
     display: inline;
-    margin: 25px 20px 15px 80px;
+    margin: 1.5625rem 1.25rem 0.9375rem 5rem;
 }
 
 .logo {
@@ -100,11 +115,11 @@ section {
 } */
 
 .search-bar {
-    border: 1px solid blue;
-    width: 400px;
-    height: 45px;
-    padding: 10px;
-    margin: 20px 30px 0px;
+    /* border: 1px solid blue; */
+    width: 25rem;
+    height: 2.8125rem;
+    padding: 0.624rem;
+    margin: 1.25rem 1.875rem 0rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -113,15 +128,15 @@ section {
 }
 
 .search-bar input {
-    width: 300px;
-    text-indent: 20px;
+    width: 18.75rem;
+    text-indent: 1.25rem;
 }
 
 .love {
-    width: 30px;
-    height: 25px;
-    background-color: lawngreen;
-    padding: 5px;
+    width: 1.875rem;
+    height: 1.5625rem;
+    /* background-color: lawngreen; */
+    padding: 0.3125rem;
 }
 
 .luv {
@@ -130,57 +145,66 @@ section {
 }
 .under {
     width: 100%;
-    height: 60px;
+    height: 3.75rem;
     padding: 1px;
-    background-color: aqua;
+    background-color: #FFFFFF;
     border-bottom: 1px solid black;
     text-align: left;
+    box-shadow: 0.0625rem 0.0625rem 0.375rem 0.0625rem #999999;
 }
-
-@keyframes sheriff {
-    0% {
-        top: 140px;
-        opacity: 0;
-    }
-    100% {
-        top: 115px;
-        opacity: 1;
-    }
+.dropdown {
+    cursor: pointer;
+    /* border: 1px solid red; */
 }
 .dropdown-content {
     width: 130px;
     height: auto;
-    border: 2px solid green;
-    background-color: beige;
+    border-top: 6px solid #28282d;
+    border-radius: 0px 0px 5px 5px;
+    background-color: #FFFFFF;
     position: absolute;
+    line-height: 11px;
     text-align: left;
     padding: 5px;
-    animation-name: sheriff;
-    animation-duration: .6s;
-    animation-timing-function: ease-in-out;
+    z-index: 9;
 }
-.dropdown:hover .dropdown-content {
-    background-color: burlywood;
+.dropdown-content p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.dropdown-contentB {
+    width: 160px;
+    height: auto;
+    border-top: 6px solid #28282d;
+    border-radius: 0px 0px 7px 7px;
+    background-color: #FFFFFF;
+    position: absolute;
+    line-height: 11px;
+    left: 170px;
+    text-align: left;
+    padding: 2px 5px;
+    z-index: 9;
+}
+.dropdown-contentB p:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .under ul {
-    margin-left: 20px;
+    margin-left: 1.25rem;
     /* border: 1px solid orangered; */
 }
 
 .under ul li {
     list-style-type: none;
     display: inline-block;
-    padding: 5px 30px;
+    padding: 0.6rem 1.875rem;
 }
 
 
-/* @media screen and (max-width: 1000px) {
-    .options {
-        display: none;
-    }
 
-} */
+
+
 
 @media screen and (max-width: 750px) {
     .under li {
@@ -188,6 +212,12 @@ section {
         padding: 5px 8px;
     }
     .search-bar {
+        display: none;
+    }
+    .dropdown-content {
+        display: none;
+    }
+    .dropdown-contentB {
         display: none;
     }
 }

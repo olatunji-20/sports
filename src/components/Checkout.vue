@@ -1,6 +1,6 @@
 <template>
     <section>
-        <button v-on:click="submitOrders({cart})">checkout</button>
+        <button v-on:click="submitOrders({cart})" v-if="cart.length">checkout</button>
     </section>
 </template>
 
@@ -17,6 +17,7 @@ export default {
     },
     methods: {
         submitOrders(cart) {
+            alert("Your order has been placed.")
             console.log("hhhhhh", cart)
         }
     }
@@ -26,11 +27,13 @@ export default {
 <style scoped>
 section {
     border: 2px solid purple;
-    margin-top: 100px;
+    margin-top: 6.25rem;
 }
 button {
-    width: 90%;
-    height: 40px;
+    width: 60%;
+    height: 2.5rem;
     background-color: aquamarine;
+    border: 0px;
+    color: white;
 }
 </style>

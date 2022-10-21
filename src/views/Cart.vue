@@ -1,9 +1,9 @@
 <template>
     <section>
         <Navbar />
+        <Back />
         <div class="main">
-            <h1>Number of items in cart {{ cart.length }}</h1>
-            <h2 v-for="product in cart" :key="product.id">{{ product.productName }}</h2>
+            <h1 style="text-decoration: underline">Number of items in cart: {{ cart.length }}</h1>
             <div v-for="product in cart" :key="product.id" class="container">
                 <div class="image">
                     <img :src="product.imageUrl" :alt="product.productName" class="cart-image">
@@ -26,7 +26,8 @@
 import { mapGetters, mapActions } from 'vuex'
 import Navbar from '../components/Navbar.vue';
 import Footbar from '../components/Footbar.vue';
-import Checkout from '@/components/Checkout.vue';
+import Checkout from '../components/Checkout.vue';
+import Back from '../components/Back.vue'
 export default {
     name: "Cart",
     data() {
@@ -38,7 +39,8 @@ export default {
     components: {
         Navbar,
         Footbar,
-        Checkout
+        Checkout,
+        Back
     },
     methods: {
         ...mapActions("products", ["removeItem"])
@@ -48,42 +50,77 @@ export default {
 
 <style scoped>
 section {
-    border: 3px solid saddlebrown;
+    border: 0px solid saddlebrown;
 }
 .main {
-    border: 2px solid blue;
-    padding: 40px;
+    /* border: 2px solid blue; */
+    padding: 2.5rem;
 }
 .container {
     width: 70%;
-    height: 200px;
-    border: 2px solid red;
-    margin: 30px auto;
+    height: 12.5rem;
+    /* border: 2px solid red; */
+    margin: 1.875rem auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    box-shadow: 0.0625rem 0.0625rem 0.375rem 0.0625rem #999999;
 }
 .image {
-    width: 220px;
+    width: 13.75rem;
     height: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .cart-image {
     width: 100%;
     height: 100%;
 }
 .infos {
-    width: 500px;
+    width: 31.25rem;
     height: 100%;
-    border: 1px solid green;
-    margin-left: 20px;
-    padding: 10px;
+    /* border: 1px solid green; */
+    margin-left: 1.25rem;
+    padding: 0.625rem;
     text-align: left;
 }
+.infos p {
+        line-height: 0.625rem;
+}
 .remove {
-    width: 50px;
-    height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
     border: 5px solid violet;
     margin: auto;
 }
+
+
+
+
+
+
+@media screen and (max-width: 900px) {
+    .containerr {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main {
+        padding: 10px;
+    }
+    .container {
+        width: 99%;
+        height: 170px;
+        margin: 20px auto;
+    }
+    .infos {
+        margin-left: 0px;
+        padding: 2px;
+        height: 180px;
+        font-size: 14px;
+    }
+   
+}
+
+
 </style>

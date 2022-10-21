@@ -25,12 +25,13 @@ export default {
 
 <style scoped>
 button {
-    margin: 20px auto;
-    width: 400px;
-    height: 40px;
+    margin: 1.25rem auto;
+    width: 80%;
+    height: 2.5rem;
     background-color: aqua;
     border: 0px;
     border-radius: 5px;
+    color: white
 }
 
 </style>

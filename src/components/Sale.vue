@@ -1,6 +1,6 @@
 <template>
     <section>
-        <h1>{{ title }}</h1>
+        <h1>{{ topic }}</h1>
         <div class="scroll">
             <div :class="move ? 'sale-move' : 'sale'">
                 <div v-for="product in products" :key="product.id" class="board">
@@ -14,7 +14,7 @@
                         <p>{{ product.productName }}</p>
                         <h5 style="display: inline;">{{ product.maker }} |</h5> <p style="display: inline">{{ product.series }}</p>
                         <p>Sizes: <span style="font-weight: bolder">S M L XL</span></p>
-                        <button class="view"><router-link :to="'/Stand/' + product.id">View the item</router-link></button>
+                        <router-link :to="'/Stand/' + product.id"><button class="view">View the item</button></router-link>
                 </div>
             </div>
         </div>
@@ -30,7 +30,6 @@ export default {
     name: "Sale",
     data() {
         return {
-            title: "Sale items",
             move: false
         };
     },
@@ -48,6 +47,9 @@ export default {
             alert("unmove");
         }
     },
+    props: {
+        topic: String
+    },
     async created() {
         this.products = await this.getProducts();
     }
@@ -56,95 +58,100 @@ export default {
 
 <style scoped>
     section {
-        border: 5px solid blue;
+        /* border: 5px solid blue; */
         width: 100%;
         height: auto;
         background-color: #FFFFFF;
-        padding: 60px 80px 0px;
+        padding: 1rem 5rem 0rem;
         text-align: left;
     }
 
-
+    h1 {
+        text-indent: 20px;
+    }
     .scroll {
-        border: 7px solid navy;
+        border: 1px solid orangered;
         width: 100%;
         height: auto;
         overflow: hidden;
     }
 
     .sale {
-        border: 4px solid firebrick;
-        width: 2200px;
-        height: 500px;
+        /* border: 4px solid firebrick; */
+        width: 137.5rem;
+        height: 31.25rem;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        transform: translateX(0px);
+        transform: translateX(0rem);
         transition: 1s;
     }
     .sale-move {
-        border: 4px solid green;
+        /* border: 4px solid green; */
         background-color: powderblue;
-        width: 2200px;
-        height: 500px;
+        width: 137.5rem;
+        height: 31.25rem;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        transform: translateX(-1100px);
+        transform: translateX(-68.75rem);
         transition: 1s;
 
     }
 
     .board {
-        width: 240px;
-        height: 385px;
-        padding: 4px;
-        border: 1px solid black;
-        margin: 5px 15px;
-        line-height: 8px;
+        width: 15rem;
+        height: 24.0625rem;
+        padding: 0.25rem;
+        /* border: 1px solid black; */
+        margin: 0.3125rem 1.125rem;
+        line-height: 0.5rem;
         overflow: hidden;
         background-color: transparent;
         text-align: left;
     }
 
     .board:hover {
-        height: 470px;
-        transition: .5s;
+        height: 29.375rem;
+        transition: .4s;
+        box-shadow: 0.0625rem 0.0625rem 0.375rem 0.0625rem #999999;
     }
 
     .board .item {
-        width: 230px;
-        height: 300px;
-        border: 2px solid red;
-        margin-bottom: 15px;
+        width: 14.375rem;
+        height: 18.75rem;
+        /* border: 1px solid #28282d; */
+        margin-bottom: 0.9375rem;
         display: block;
         overflow: hidden
     }
 
     .discount {
-        width: 50px;
-        height: 20px;
+        width: 2.5rem;
+        height: 1.25rem;
         background-color: red;
         border-radius: 2px;
         position: relative;
-        line-height: 18px;
+        line-height: 1.125rem;
+        font-size: 12px;
         color: white;
-        text-indent: 6px;
-        bottom: 295px;
-        margin: 2px;
+        text-indent: 0.375rem;
+        bottom: 18.4375rem;
+        margin: 0.125rem;
         float: left;
         z-index: 9;
     }
 
     .love {
-        width: 25px;
-        height: 25px;
-        background-color: lawngreen;
-        padding: 6px;
+        width: 1.5625rem;
+        height: 1.5625rem;
+        background-color: white;
+        box-shadow: 0.0625rem 0.0625rem 0.375rem 0.0625rem #999999;
+        padding: 0.375rem;
         border-radius: 50%;
         position: relative;
-        bottom: 295px;
-        margin: 2px;
+        bottom: 18.4375rem;
+        margin: 0.125rem;
         float: right;
         z-index: 9;
     }
@@ -155,40 +162,41 @@ export default {
     }
 
     .free {
-        width: 30px;
-        height: 20px;
-        background-color: powderblue;
-        border: 1px solid black;
+        width: 1.875rem;
+        height: 1.25rem;
+        background-color: #F6F6F6;
+        /* border: 1px solid black; */
         position: relative;
-        right: 50px;
-        bottom: 30px;
+        right: 2.5rem;
+        bottom: 1.875rem;
         overflow: hidden;
         z-index: 9;
     }
 
     .free p {
         display: inline;
-        padding-left: 5px;
-        font-size: 12px;
-        line-height: 18px;
+        padding-left: 0.3125rem;
+        font-size: 0.75rem;
+        line-height: 1.125rem;
     }
     .free:hover {
-        width: 115px;
+        width: 7.1875rem;
         transition: .4s;
     }
     .motor {
-        width: 30px;
-        height: 20px;
+        width: 1.875rem;
+        height: 1.25rem;
         float: right;
         display: inline;
     }
 
     .view {
         width: 100%;
-        height: 40px;
+        height: 2.5rem;
         background-color: #28282d;
         color: white;
         border-radius: 4px;
+        border: 0px;
         cursor: pointer;
     }
     .prod {
@@ -199,33 +207,40 @@ export default {
         z-index: 2;
     }
     .pointer {
-        width: 50px;
-        height: 50px;
-        background-color: royalblue;
-        padding: 10px;
+        width: 3.5rem;
+        height: 3.5rem;
+        background-color: #999999;
+        padding: 0.625rem;
         position: relative;
         float: right;
-        bottom: 350px;
-        left: 20px;
+        bottom: 21.875rem;
+        left: 1.7rem;
         border-radius: 50%;
-        border: 6px solid black;
     }
     .pointer:active {
         background-color: green;
     }
  
     .pointer2 {
-        width: 50px;
-        height: 50px;
-        background-color: red;
+        width: 3.5rem;
+        height: 3.5rem;
+        background-color: orangered;
         position: relative;
-        bottom: 300px;
-        right: 20px;
+        bottom: 18.75rem;
+        right: 1.7rem;
         border-radius: 50%;
-        padding: 10px;
-        font-size: 20px;
+        padding: 0.625rem;
+        font-size: 1.25rem;
         font-weight: bolder;
     }
+
+
+
+
+
+
+
+
 
     @media screen and (max-width: 800px) {
         section {

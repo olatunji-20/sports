@@ -1,21 +1,21 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <Navbar />
     <Categories />
-    <Sale />
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Sale topic="Sales item"/>
+    <Sale topic="Latest products"/>
+    <Sponsors />
+    <Sale topic="Recently viewed"/>
     <Footbar/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Navbar from '@/components/Navbar.vue';
-import Categories from '@/components/Categories.vue';
+import Navbar from '../components/Navbar.vue';
+import Categories from '../components/Categories.vue';
 import Sale from '../components/Sale.vue';
-import HelloWorld from '@/components/HelloWorld.vue'
-import Footbar from '@/components/Footbar.vue';
+import Footbar from '../components/Footbar.vue';
+import Sponsors from '../components/Sponsors.vue'
 
 export default {
   name: 'HomeView',
@@ -23,8 +23,8 @@ export default {
     Navbar,
     Categories,
     Sale,
-    HelloWorld,
     Footbar,
+    Sponsors
 }
 }
 </script>
