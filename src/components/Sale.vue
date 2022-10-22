@@ -221,7 +221,7 @@ h1 {
     position: relative;
     float: right;
     bottom: 21.875rem;
-    left: 1.8rem;
+    left: 0rem;
     border-radius: 50%;
     font-size: 50px;
     color: orangered;
@@ -234,7 +234,7 @@ h1 {
     height: 3.5rem;
     position: relative;
     bottom: 18.75rem;
-    right: 1.9rem;
+    right: 0rem;
     border-radius: 50%;
     padding: 0.625rem;
     font-size: 50px;
