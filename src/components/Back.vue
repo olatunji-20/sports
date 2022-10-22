@@ -1,6 +1,8 @@
 <template>
     <section>
-        <div class="back" v-on:click="$router.go(-1)"><arrow-left-bold /></div>
+        <div class="back" v-on:click="$router.go(-1)">
+            <arrow-left-bold />
+        </div>
     </section>
 </template>
 

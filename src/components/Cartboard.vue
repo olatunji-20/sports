@@ -3,7 +3,9 @@
         <router-link to="/cart">
             <div class="main" v-if="cart.length">
                 <h2 class="number">{{ cart.length }}</h2>
-                <div class="icon"><CartArrowDown /></div>
+                <div class="icon">
+                    <CartArrowDown />
+                </div>
             </div>
         </router-link>
     </section>
@@ -37,11 +39,11 @@ export default {
     border-radius: 50%;
     padding: 0px;
     float: right;
-    /* border: 1px solid red; */
     position: relative;
     bottom: 1.25rem;
     color: white;
 }
+
 .icon {
     width: 1.875rem;
     height: 1.875rem;
@@ -53,6 +55,7 @@ export default {
     color: white;
     font-size: 22px;
 }
+
 .number {
     position: relative;
     bottom: 0.4375rem;

@@ -1,7 +1,8 @@
 import axios from "axios"
 
 export async function getProducts( {commit} ) {
-    let url = "http://localhost:5000/sales-product"
+    let url = "https://my-json-server.typicode.com/olatunji-20/lovesports/sales-product"
+    // let url = "http://localhost:5000/sales-product"
     await axios.get(url).then((response) => {
         let result = response.data;
         commit("setProducts1", result)
@@ -9,7 +10,8 @@ export async function getProducts( {commit} ) {
 }
 
 export async function getProducts2( {commit} ) {
-    let url = "http://localhost:5000/latest-products"
+    let url = "https://my-json-server.typicode.com/olatunji-20/lovesports/latest-products"
+    // let url = "http://localhost:5000/latest-products"
     await axios.get(url).then((response) => {
         let result = response.data;
         commit("setProducts2", result)
@@ -17,7 +19,8 @@ export async function getProducts2( {commit} ) {
 }
 
 export async function getProduct({commit}, id) {
-    let url = `http://localhost:5000/sales-product/${id}`
+    let url = `https://my-json-server.typicode.com/olatunji-20/lovesports/sales-product/${id}`
+    // let url = `http://localhost:5000/sales-product/${id}`
     await axios.get(url).then((response) => {
         let result = response.data
         commit("setProduct", result)
@@ -25,7 +28,8 @@ export async function getProduct({commit}, id) {
 }
 
 export async function getProduct2({commit}, id) {
-    let url = `http://localhost:5000/latest-products/${id}`
+    let url = `https://my-json-server.typicode.com/olatunji-20/lovesports/latest-products/${id}`
+    // let url = `http://localhost:5000/latest-products/${id}`
     await axios.get(url).then((response) => {
         let result = response.data
         commit("setProduct", result)

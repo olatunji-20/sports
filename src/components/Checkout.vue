@@ -12,7 +12,7 @@ export default {
 
         }
     },
-    props:{
+    props: {
         cart: Array
     },
     methods: {
@@ -29,6 +29,7 @@ section {
     border: 2px solid purple;
     margin-top: 6.25rem;
 }
+
 button {
     width: 60%;
     height: 2.5rem;

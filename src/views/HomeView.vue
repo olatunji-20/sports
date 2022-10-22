@@ -2,11 +2,11 @@
   <div class="home">
     <Navbar />
     <Categories />
-    <Sale :products="products1" route="Stand" topic="Sales item"/>
-    <Sale :products="products2" route="Standd" topic="Latest products"/>
+    <Sale :products="products1" route="Stand" topic="Sales item" />
+    <Sale :products="products2" route="Standd" topic="Latest products" />
     <Sponsors />
-    <Sale :products="products1" route="Stand" topic="Recently viewed"/>
-    <Footbar/>
+    <Sale :products="products1" route="Stand" topic="Recently viewed" />
+    <Footbar />
   </div>
 </template>
 

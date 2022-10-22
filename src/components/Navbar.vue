@@ -17,20 +17,20 @@
             <div class="under">
                 <ul>
                     <li @mouseenter="dropdownA" @mouseleave="undropA" class="dropdown">Sports</li>
-                        <div @mouseenter="dropdownA" @mouseleave="undropA" v-show="dropA" class="dropdown-content">
-                            <p>Packs & Bags</p>
-                            <p>Bikes</p>
-                            <p>Ball sports</p>
-                            <p>Protection</p>
-                        </div>
+                    <div @mouseenter="dropdownA" @mouseleave="undropA" v-show="dropA" class="dropdown-content">
+                        <p>Packs & Bags</p>
+                        <p>Bikes</p>
+                        <p>Ball sports</p>
+                        <p>Protection</p>
+                    </div>
                     <li @mouseenter="dropdownB" @mouseleave="undropB" class="dropdown">Footwear</li>
-                        <div @mouseenter="dropdownB" @mouseleave="undropB" v-show="dropB" class="dropdown-contentB">
-                            <p>Snowboard boots</p>
-                            <p>Outdoor shoes</p>
-                            <p>Running shoes</p>
-                            <p>Fitness</p>
-                            <p>Sport shoes</p>
-                        </div>
+                    <div @mouseenter="dropdownB" @mouseleave="undropB" v-show="dropB" class="dropdown-contentB">
+                        <p>Snowboard boots</p>
+                        <p>Outdoor shoes</p>
+                        <p>Running shoes</p>
+                        <p>Fitness</p>
+                        <p>Sport shoes</p>
+                    </div>
                     <li>Apparel</li>
                     <li>Special deals</li>
                 </ul>
@@ -73,23 +73,15 @@ section {
 }
 
 .lff {
-    /* border: 1px solid green; */
     width: 100%;
     height: 5rem;
     background-color: #28282d;
     text-align: left;
 }
 
-/* .main-container {
-    border: 9px solid blueviolet;
-    width: 100%;
-    height: auto;
-    padding: 4.375rem 0rem 0rem;
-} */
 .logo-container {
-    width: 12.5rem;       
+    width: 12.5rem;
     height: 2.1875rem;
-    /* border: 1px solid red; */
     position: relative;
     float: left;
     display: inline;
@@ -101,21 +93,7 @@ section {
     height: 100%;
 }
 
-/* .options {
-    display: inline;
-}
-
-.options li {
-    list-style-type: none;
-    display: inline-block;
-    padding: 8px 20px;
-    margin-top: 17px;
-    border: 1px solid green;
-    color: white;
-} */
-
 .search-bar {
-    /* border: 1px solid blue; */
     width: 25rem;
     height: 2.8125rem;
     padding: 0.624rem;
@@ -135,7 +113,6 @@ section {
 .love {
     width: 1.875rem;
     height: 1.5625rem;
-    /* background-color: lawngreen; */
     padding: 0.3125rem;
 }
 
@@ -143,6 +120,7 @@ section {
     width: 100%;
     height: 100%;
 }
+
 .under {
     width: 100%;
     height: 3.75rem;
@@ -152,10 +130,11 @@ section {
     text-align: left;
     box-shadow: 0.0625rem 0.0625rem 0.375rem 0.0625rem #999999;
 }
+
 .dropdown {
     cursor: pointer;
-    /* border: 1px solid red; */
 }
+
 .dropdown-content {
     width: 130px;
     height: auto;
@@ -168,10 +147,12 @@ section {
     padding: 5px;
     z-index: 9;
 }
+
 .dropdown-content p:hover {
     text-decoration: underline;
     cursor: pointer;
 }
+
 .dropdown-contentB {
     width: 160px;
     height: auto;
@@ -185,6 +166,7 @@ section {
     padding: 2px 5px;
     z-index: 9;
 }
+
 .dropdown-contentB p:hover {
     text-decoration: underline;
     cursor: pointer;
@@ -192,7 +174,6 @@ section {
 
 .under ul {
     margin-left: 1.25rem;
-    /* border: 1px solid orangered; */
 }
 
 .under ul li {
@@ -201,22 +182,20 @@ section {
     padding: 0.6rem 1.875rem;
 }
 
-
-
-
-
-
 @media screen and (max-width: 750px) {
     .under li {
         font-size: 14px;
         padding: 5px 8px;
     }
+
     .search-bar {
         display: none;
     }
+
     .dropdown-content {
         display: none;
     }
+
     .dropdown-contentB {
         display: none;
     }
@@ -226,18 +205,22 @@ section {
     .logo-container {
         margin-left: 30px;
     }
+
     .search-bar {
         display: none;
     }
+
     .under {
         display: block;
     }
+
     .under ul {
         margin-left: 0px;
     }
+
     .under ul li {
         padding: 5px;
-        font-size:  12px;
+        font-size: 12px;
         overflow: hidden;
     }
 

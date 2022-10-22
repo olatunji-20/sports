@@ -31,73 +31,68 @@
 </template>
 
 <script>
-    export default {
-        name: 'Categories',
-        data() {
-            return {
-                title: "Top categories",
-            }
+export default {
+    name: 'Categories',
+    data() {
+        return {
+            title: "Top categories",
         }
     }
+}
 </script>
 
 <style scoped>
+section {
+    width: 100%;
+    height: auto;
+    padding: 2.5rem 5rem;
+    text-align: left;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    margin: 1.875rem auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cate {
+    width: 21.25rem;
+    height: 14.375rem;
+    margin: 0.625rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.cate .img {
+    height: 100%;
+    width: 100%;
+    filter: contrast(65%)
+}
+
+.cate .img:hover {
+    filter: contrast(90%);
+    transition: .5s;
+}
+
+.cate h3 {
+    position: relative;
+    bottom: 3.4375rem;
+    z-index: 9;
+    color: white;
+}
+
+@media screen and (max-width: 500px) {
     section {
-        width: 100%;
-        /* border: 2px solid saddlebrown; */
-        /* background-color: aliceblue; */
+        padding: 30px 10px;
         height: auto;
-        padding: 2.5rem 5rem;
-        text-align: left;
     }
 
-    .container {
-        width: 100%;
-        height: auto;
-        /* border: 2px solid firebrick; */
-        margin: 1.875rem auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
+    h1 {
+        text-indent: 20px;
     }
-
-    .cate {
-        width: 21.25rem;
-        height: 14.375rem;
-        /* border: 1px solid brown; */
-        margin: 0.625rem;
-        border-radius: 6px;
-        text-align: center;
-    }
-
-    .cate .img {
-        height: 100%;
-        width: 100%;
-        filter: contrast(65%)
-    }
-
-    .cate .img:hover {
-        filter: contrast(90%);
-        transition: .5s;
-    }
-    .cate h3 {
-        position: relative;
-        bottom: 3.4375rem;
-        z-index: 9;
-        color: white;
-    }
-
-
-
-    @media screen and (max-width: 500px) {
-        section {
-            padding: 30px 10px;
-            height: auto;
-        }
-        h1 {
-            text-indent: 20px;
-        }
-    }
-    
+}
 </style>

@@ -11,10 +11,13 @@
                 <div class="infos">
                     <h3>Name: {{ product.productName }}</h3>
                     <p>Price: €{{ product.productPrice - ((product.discount * product.productPrice) / 100) }}</p>
-                    <p>Quantity:   {{ product.quantity }}</p>
-                    <p>Total: €{{ (product.productPrice - ((product.discount * product.productPrice) / 100)) * product.quantity }}</p>
+                    <p>Quantity: {{ product.quantity }}</p>
+                    <p>Total: €{{ (product.productPrice - ((product.discount * product.productPrice) / 100)) *
+                    product.quantity }}</p>
                 </div>
-                <div v-on:click="removeItem(product.id)" class="remove"><Close /></div>
+                <div v-on:click="removeItem(product.id)" class="remove">
+                    <Close />
+                </div>
             </div>
             <Checkout :cart="cart" />
         </div>
@@ -54,40 +57,43 @@ export default {
 section {
     border: 0px solid saddlebrown;
 }
+
 .main {
-    /* border: 2px solid blue; */
     padding: 2.5rem;
 }
+
 .container {
     width: 70%;
     height: 12.5rem;
-    /* border: 2px solid red; */
     margin: 1.875rem auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     box-shadow: 0.0625rem 0.0625rem 0.375rem 0.0625rem #999999;
 }
+
 .image {
     width: 13.75rem;
     height: 100%;
-    /* border: 1px solid black; */
 }
+
 .cart-image {
     width: 100%;
     height: 100%;
 }
+
 .infos {
     width: 31.25rem;
     height: 100%;
-    /* border: 1px solid green; */
     margin-left: 1.25rem;
     padding: 0.625rem;
     text-align: left;
 }
+
 .infos p {
-        line-height: 0.625rem;
+    line-height: 0.625rem;
 }
+
 .remove {
     width: 3.125rem;
     height: 3.125rem;
@@ -95,11 +101,6 @@ section {
     color: red;
     font-size: 30px;
 }
-
-
-
-
-
 
 @media screen and (max-width: 900px) {
     .containerr {
@@ -111,19 +112,18 @@ section {
     .main {
         padding: 10px;
     }
+
     .container {
         width: 99%;
         height: 170px;
         margin: 20px auto;
     }
+
     .infos {
         margin-left: 0px;
         padding: 2px;
         height: 180px;
         font-size: 14px;
     }
-   
 }
-
-
 </style>
