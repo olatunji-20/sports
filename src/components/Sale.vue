@@ -14,17 +14,20 @@
                         <p>{{ product.productName }}</p>
                         <h5 style="display: inline;">{{ product.maker }} |</h5> <p style="display: inline">{{ product.series }}</p>
                         <p>Sizes: <span style="font-weight: bolder">S M L XL</span></p>
-                        <router-link :to="'/Stand/' + product.id"><button class="view">View the item</button></router-link>
+                        <router-link :to="'/'+route+'/' + product.id"><button class="view">View the item</button></router-link>
                 </div>
             </div>
         </div>
-        <div class="pointer2" v-on:click="moveRight"><p>&#8810</p></div>
-        <div class="pointer" v-on:click="moveLeft"><p>&#8811</p></div>
+        <div class="pointer2" v-on:click="moveRight"><arrow-left-drop-circle-outline /></div>
+        <div class="pointer" v-on:click="moveLeft"><arrow-right-drop-circle-outline /></div>
     </section>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+// import { mapGetters, mapActions } from 'vuex';
+import ArrowRightDropCircleOutline from 'vue-material-design-icons/ArrowRightDropCircleOutline.vue'
+import ArrowLeftDropCircleOutline from 'vue-material-design-icons/ArrowLeftDropCircleOutline.vue'
+
 
 export default {
     name: "Sale",
@@ -34,10 +37,10 @@ export default {
         };
     },
     computed: {
-        ...mapGetters("products", ["products"])
+        // ...mapGetters("products", ["products"])
     },
     methods: {
-        ...mapActions("products", ["getProducts"]),
+        // ...mapActions("products", ["getProducts"]),
         moveLeft() {
             this.move = true;
             alert("clickdddddddddd");
@@ -48,10 +51,16 @@ export default {
         }
     },
     props: {
-        topic: String
+        topic: String,
+        products: Array,
+        route: String
     },
-    async created() {
-        this.products = await this.getProducts();
+    // async created() {
+    //     this.products = await this.getProducts();
+    // },
+    components: {
+        ArrowRightDropCircleOutline,
+        ArrowLeftDropCircleOutline
     }
 }
 </script>
@@ -70,7 +79,7 @@ export default {
         text-indent: 20px;
     }
     .scroll {
-        border: 1px solid orangered;
+        border: 2px solid #F6F6F6;
         width: 100%;
         height: auto;
         overflow: hidden;
@@ -209,29 +218,33 @@ export default {
     .pointer {
         width: 3.5rem;
         height: 3.5rem;
-        background-color: #999999;
-        padding: 0.625rem;
+        /* background-color: green; */
+        padding: 1px;
         position: relative;
         float: right;
         bottom: 21.875rem;
-        left: 1.7rem;
+        left: 1.8rem;
         border-radius: 50%;
-    }
-    .pointer:active {
-        background-color: green;
+        font-size: 50px;
+        color: orangered;
+        line-height: 0px;
+        cursor: pointer;
     }
  
     .pointer2 {
         width: 3.5rem;
         height: 3.5rem;
-        background-color: orangered;
+        /* background-color: #F6F6F6   ; */
         position: relative;
         bottom: 18.75rem;
-        right: 1.7rem;
+        right: 1.9rem;
         border-radius: 50%;
         padding: 0.625rem;
-        font-size: 1.25rem;
+        font-size: 50px;
+        color: orangered;
         font-weight: bolder;
+        line-height: 0px;
+        cursor: pointer;
     }
 
 

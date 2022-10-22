@@ -4,12 +4,28 @@ export async function getProducts( {commit} ) {
     let url = "http://localhost:5000/sales-product"
     await axios.get(url).then((response) => {
         let result = response.data;
-        commit("setProducts", result)
+        commit("setProducts1", result)
+    })
+}
+
+export async function getProducts2( {commit} ) {
+    let url = "http://localhost:5000/latest-products"
+    await axios.get(url).then((response) => {
+        let result = response.data;
+        commit("setProducts2", result)
     })
 }
 
 export async function getProduct({commit}, id) {
     let url = `http://localhost:5000/sales-product/${id}`
+    await axios.get(url).then((response) => {
+        let result = response.data
+        commit("setProduct", result)
+    })
+}
+
+export async function getProduct2({commit}, id) {
+    let url = `http://localhost:5000/latest-products/${id}`
     await axios.get(url).then((response) => {
         let result = response.data
         commit("setProduct", result)

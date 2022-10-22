@@ -14,7 +14,7 @@
                     <p>Quantity:   {{ product.quantity }}</p>
                     <p>Total: €{{ (product.productPrice - ((product.discount * product.productPrice) / 100)) * product.quantity }}</p>
                 </div>
-                <div v-on:click="removeItem(product.id)" class="remove"></div>
+                <div v-on:click="removeItem(product.id)" class="remove"><Close /></div>
             </div>
             <Checkout :cart="cart" />
         </div>
@@ -27,7 +27,8 @@ import { mapGetters, mapActions } from 'vuex'
 import Navbar from '../components/Navbar.vue';
 import Footbar from '../components/Footbar.vue';
 import Checkout from '../components/Checkout.vue';
-import Back from '../components/Back.vue'
+import Back from '../components/Back.vue';
+import Close from 'vue-material-design-icons/Close.vue'
 export default {
     name: "Cart",
     data() {
@@ -40,7 +41,8 @@ export default {
         Navbar,
         Footbar,
         Checkout,
-        Back
+        Back,
+        Close
     },
     methods: {
         ...mapActions("products", ["removeItem"])
@@ -89,8 +91,9 @@ section {
 .remove {
     width: 3.125rem;
     height: 3.125rem;
-    border: 5px solid violet;
     margin: auto;
+    color: red;
+    font-size: 30px;
 }
 
 

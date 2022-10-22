@@ -1,22 +1,30 @@
 <template>
     <section>
-        <div class="back" v-on:click="$router.go(-1)"><p>Back</p></div>
+        <div class="back" v-on:click="$router.go(-1)"><arrow-left-bold /></div>
     </section>
 </template>
 
 <script>
+import MenuIcon from 'vue-material-design-icons/Menu.vue'
+import ArrowLeftBold from 'vue-material-design-icons/ArrowLeftBold.vue'
 export default {
-    name: 'Back'
+    name: 'Back',
+    components: {
+        MenuIcon,
+        ArrowLeftBold
+    }
 }
 </script>
 
 <style scoped>
 .back {
-    width: 6.25rem;
-    height: 2.5rem;
+    width: 4.25rem;
+    height: 2rem;
     background-color: red;
     color: white;
-    padding: 1px;
+    padding: 0px;
+    line-height: 0px;
     cursor: pointer;
+    font-size: 25px;
 }
 </style>

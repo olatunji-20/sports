@@ -112,5 +112,128 @@
               "shipping": "Lorem 99999 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
             }
         }
+    ],
+    "latest-products": [   
+      {
+        "id": 1,
+        "discount": 5,
+        "imageUrl": "../assets/whistle.png",
+        "productPrice": 36,
+        "productName": "Golden whistle",
+        "maker": "GOLDEN",
+        "series": "be loud",
+        "extras": {
+          "overview": "loremLorem 99999 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "description": "Lorem 99999 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "shipping": "Lorem 99999 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+        }
+      },
+      {
+        "id": 2,
+        "discount": 15,
+        "imageUrl": "../assets/cricket.png",
+        "productPrice": 150,
+        "productName": "Criket Bat",
+        "maker": "ADIDAS",
+        "series": "Dream",
+        "extras": {
+          "overview": "loremLorem 888 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "description": "Lorem 8888 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "shipping": "Lorem 8888 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+        }
+      },
+      {
+        "id": 3,
+        "discount": 10,
+        "imageUrl": "../assets/gloves.png",
+        "productPrice": 80,
+        "productName": "Golden gloves",
+        "maker": "GOLDEN",
+        "series": "ProSport.it",
+        "extras": {
+          "overview": "loremLorem 7777 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "description": "Lorem 7777 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "shipping": "Lorem 77777 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+        }
+      },
+      {
+        "id": 4,
+        "discount": 4,
+        "imageUrl": "../assets/skate.png",
+        "productPrice": 36,
+        "productName": "Skating board",
+        "maker": "UNDER ARMOR",
+        "series": "ProSport.it",
+        "extras": {
+          "overview": "loremLorem 6666 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "description": "Lorem 6666 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "shipping": "Lorem 6666 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+        }
+      },
+      {
+        "id": 5,
+        "discount": 25,
+        "imageUrl": "../assets/tennis.png",
+        "productPrice": 200,
+        "productName": "Tennis bat",
+        "maker": "NIKE",
+        "series": "Be Correct",
+        "extras": {
+          "overview": "loremLorem 5555 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "description": "Lorem 5555 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "shipping": "Lorem 5555 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+        }
+      },
+      {
+        "id": 6,
+        "discount": 18,
+        "imageUrl": "../assets/highland.png",
+        "productPrice": 95,
+        "productName": "Tennis ball",
+        "maker": "NIKE",
+        "series": "ProSport.it",
+        "extras": {
+          "overview": "loremLorem 444 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "description": "Lorem 444 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "shipping": "Lorem 444 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+        }
+      },
+      {
+        "id": 7,
+        "discount": 7,
+        "imageUrl": "../assets/baseball.png",
+        "productPrice": 80,
+        "productName": "Baseball bat",
+        "maker": "ADIDAS",
+        "series": "Hit it",
+        "extras": {
+          "overview": "loremLorem 3333 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "description": "Lorem 3333 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "shipping": "Lorem 3333 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+        }
+      },
+      {
+        "id": 8,
+        "discount": 30,
+        "imageUrl": "../assets/basketball.png",
+        "productPrice": 220,
+        "productName": "Basketball",
+        "maker": "PUMA",
+        "series": "Aim High",
+        "extras": {
+          "overview": "loremLorem 2222 OVERVIEW ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "description": "Lorem 2222 DESCRIPTION ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?",
+          "shipping": "Lorem 2222 SHIPPING ipsum dolor sit amet consectetur, adipisicing elit. non earum eos voluptatem aliquid laudantium?"
+        }
+      }
+
+
     ]
+
+
+
+
+
+
+
 }

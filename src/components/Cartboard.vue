@@ -3,7 +3,7 @@
         <router-link to="/cart">
             <div class="main" v-if="cart.length">
                 <h2 class="number">{{ cart.length }}</h2>
-                <div class="icon"></div>
+                <div class="icon"><CartArrowDown /></div>
             </div>
         </router-link>
     </section>
@@ -11,6 +11,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import CartArrowDown from 'vue-material-design-icons/CartArrowDown.vue'
 
 export default {
     name: 'Cartboard',
@@ -21,6 +22,9 @@ export default {
     },
     computed: {
         ...mapGetters("products", ["cart"])
+    },
+    components: {
+        CartArrowDown
     }
 }
 </script>
@@ -29,23 +33,25 @@ export default {
 .main {
     width: 3.125rem;
     height: 3.125rem;
-    background-color: lawngreen;
+    background-color: orangered;
     border-radius: 50%;
     padding: 0px;
     float: right;
     /* border: 1px solid red; */
     position: relative;
     bottom: 1.25rem;
+    color: white;
 }
 .icon {
     width: 1.875rem;
     height: 1.875rem;
-    background-color: orangered;
+    background-color: gray;
     border-radius: 50%;
     position: relative;
     bottom: 1.5625rem;
     left: 0.9375rem;
     color: white;
+    font-size: 22px;
 }
 .number {
     position: relative;

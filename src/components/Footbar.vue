@@ -5,10 +5,10 @@
                 <img src="../../public/assets/lovesport.png" alt="lovesport" class="logo" />
             </div>
             <div class="socials">
-                <div class="social-media"><img src="../../public/assets/facebook.png" alt="facebook" class="soc"></div>
-                <div class="social-media"></div>
-                <div class="social-media"></div>
-                <div class="social-media"></div>              
+                <div class="social-media"><Facebook /></div>
+                <div class="social-media"><Twitter /></div>
+                <div class="social-media"><Youtube /></div>
+                <div class="social-media"><Instagram /></div>              
             </div>
         </div>
         <div class="foot2">
@@ -45,12 +45,22 @@
 </template>
 
 <script>
+import Facebook from 'vue-material-design-icons/Facebook.vue'
+import Twitter from 'vue-material-design-icons/Twitter.vue'
+import Youtube from 'vue-material-design-icons/Youtube.vue'
+import Instagram from 'vue-material-design-icons/Instagram.vue'
     export default {
         name: "Footbar",
         data() {
             return {
 
             }
+        },
+        components: {
+            Facebook,
+            Twitter,
+            Youtube,
+            Instagram
         }
     }
 </script>
@@ -102,9 +112,10 @@
         width: 2.5rem;
         height: 2.5rem;
         background-color: black;
-        padding: 0.625rem;
+        padding: 3px 7px;
         margin: 1px;
         border-radius: 50%;
+        font-size: 25px;
     }
 
     .soc {

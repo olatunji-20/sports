@@ -1,6 +1,7 @@
 export default function() {
     return {
-        products: [],
+        products1: [],
+        products2: [],
         product: {},
         cart: []
     }
