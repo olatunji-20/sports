@@ -97,7 +97,6 @@ h1 {
 }
 
 .sale-move {
-    background-color: powderblue;
     width: 137.5rem;
     height: 31.25rem;
     display: flex;
