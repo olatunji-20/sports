@@ -17,20 +17,24 @@
             <div class="under">
                 <ul>
                     <li @mouseenter="dropdownA" @mouseleave="undropA" class="dropdown">Sports</li>
-                    <div @mouseenter="dropdownA" @mouseleave="undropA" v-show="dropA" class="dropdown-content">
-                        <p>Packs & Bags</p>
-                        <p>Bikes</p>
-                        <p>Ball sports</p>
-                        <p>Protection</p>
-                    </div>
+                    <transition name="menu-drop">
+                        <div @mouseenter="dropdownA" @mouseleave="undropA" v-show="dropA" class="dropdown-content">
+                            <p>Packs & Bags</p>
+                            <p>Bikes</p>
+                            <p>Ball sports</p>
+                            <p>Protection</p>
+                        </div>
+                    </transition>
                     <li @mouseenter="dropdownB" @mouseleave="undropB" class="dropdown">Footwear</li>
-                    <div @mouseenter="dropdownB" @mouseleave="undropB" v-show="dropB" class="dropdown-contentB">
-                        <p>Snowboard boots</p>
-                        <p>Outdoor shoes</p>
-                        <p>Running shoes</p>
-                        <p>Fitness</p>
-                        <p>Sport shoes</p>
-                    </div>
+                    <transition name="menu-drop">
+                        <div @mouseenter="dropdownB" @mouseleave="undropB" v-show="dropB" class="dropdown-contentB">
+                            <p>Snowboard boots</p>
+                            <p>Outdoor shoes</p>
+                            <p>Running shoes</p>
+                            <p>Fitness</p>
+                            <p>Sport shoes</p>
+                        </div>
+                    </transition>
                     <li>Apparel</li>
                     <li>Special deals</li>
                 </ul>
@@ -131,6 +135,19 @@ section {
     box-shadow: 0.0625rem 0.0625rem 0.375rem 0.0625rem #999999;
 }
 
+.menu-drop-enter-from, .menu-drop-leave-to {
+    opacity: 0;
+    height: 0px;
+    /* transform: translateY(0px) */
+}
+.menu-drop-enter-to, .menu-drop-leave-from  {
+    opacity: 1;
+    height: auto;
+    /* transform: translateY(20px) */
+}
+.menu-drop-enter-active, .menu-drop-leave-active {
+    transition: all .6s ease;
+}
 .dropdown {
     cursor: pointer;
 }
@@ -146,6 +163,7 @@ section {
     text-align: left;
     padding: 5px;
     z-index: 9;
+    font-size: 15px;
 }
 
 .dropdown-content p:hover {
