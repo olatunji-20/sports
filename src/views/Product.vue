@@ -1,35 +1,59 @@
 <template>
-    <section>
-        <h2>ADD YOUR PRODUCTS FOR SALE HERE</h2>
-        <div class="main">
+  <section>
+    <h2>ADD YOUR PRODUCTS FOR SALE HERE</h2>
+    <div class="main">
       <form @submit.prevent="test" enctype="multipart/form-data">
-        <input type="text" placeholder="name" v-model="name" />
-        <input type="text" placeholder="class" v-model="form" />
-        <input type="email" placeholder="E-mail" v-model="email" />
-        <input type="tel" placeholder="phone" v-model="phone" />
-        <input type="text" placeholder="department" v-model="department" />
+        <input type="text" placeholder="product name" v-model="productName" /><br />
+        <input type="text" placeholder="product maker" v-model="maker" /><br />
+        <input type="number" placeholder="product price" v-model="productPrice" /><br />
+        <input type="number" placeholder="discount" v-model="discount" /><br />
+        <input type="text" placeholder="series" v-model="series" /><br />
         <input
           type="file"
           name="img"
           ref="picture"
           v-on:change="fileSelected"
-        />
-        <input type="date" placeholder="date of birth" v-model="dob" />
+        /><br /><br /><br />
         <button>SUBMIT</button>
       </form>
     </div>
-    </section>
+  </section>
 </template>
 
 <script>
 export default {
-    name: "Product",
-    data() {
-        return {}
-    }
-}
+  name: "Product",
+  data() {
+    return {
+        productName: "",
+        maker: "",
+        productPrice: "",
+        discount: "",
+        series: "",
+        selectedImage: ""
+    };
+  },
+  methods: {}
+};
 </script>
 
 <style scoped>
-
+.main {
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    background: powderblue;
+    margin: 0px auto;   
+}
+input {
+    width: 80%;
+    height: 30px;
+    margin: 6px auto;
+}
+button {
+    width: 60%;
+    height: 35px;
+    background: green;
+    color: white;
+}
 </style>
