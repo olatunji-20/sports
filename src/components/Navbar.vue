@@ -36,7 +36,7 @@
                         </div>
                     </transition>
                     <li>Apparel</li>
-                    <li>Special deals</li>
+                    <li><router-link to="/add-product"> Special deals</router-link></li>
                 </ul>
             </div>
         </div>

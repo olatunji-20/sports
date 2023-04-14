@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import Stand from '../views/Stand.vue'
 import Standd from '../views/Standd.vue'
 import Cart from '../views/Cart.vue'
+import Product from '../views/Product.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/cart',
     name: 'Cart',
     component: Cart
+  },
+  {
+    path: '/add-product',
+    name: 'Product',
+    component: Product
   }
 ]
 
