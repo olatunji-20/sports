@@ -33,7 +33,27 @@ export default {
         selectedImage: ""
     };
   },
-  methods: {}
+  methods: {
+    fileSelected() {
+      const pic = this.$refs.picture.files[0];
+      this.selectedImage = pic;
+    },
+    async test() {
+      const formData = new FormData();
+      formData.append("productName", this.productName);
+      formData.append("maker", this.maker);
+      formData.append("productPrice", this.productPrice);
+      formData.append("discount", this.discount);
+      formData.append("series", this.series);
+      formData.append("picture", this.selectedImage, this.selectedImage.name);
+
+      try {
+
+      } catch(error) {
+        
+      }
+    }
+  }
 };
 </script>
 
