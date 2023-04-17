@@ -15,12 +15,15 @@
           v-on:change="fileSelected"
         /><br /><br /><br />
         <button>SUBMIT</button>
+        <!-- <Productupload :productDetails="formData"/> -->
       </form>
     </div>
   </section>
 </template>
 
 <script>
+import Productupload from '../components/Product-upload'
+
 export default {
   name: "Product",
   data() {
@@ -30,8 +33,11 @@ export default {
         productPrice: "",
         discount: "",
         series: "",
-        selectedImage: ""
+        selectedImage: "",
     };
+  },
+  components: {
+    Productupload
   },
   methods: {
     fileSelected() {
@@ -48,9 +54,9 @@ export default {
       formData.append("picture", this.selectedImage, this.selectedImage.name);
 
       try {
-
+        console.log("dfhuf" + "FORMDATA")
       } catch(error) {
-        
+        console.log(error)
       }
     }
   }
