@@ -71,7 +71,7 @@ export default {
     height: 500px;
     padding: 20px;
     background: powderblue;
-    margin: 0px auto;   
+    margin: 0px auto;
 }
 input {
     width: 80%;
