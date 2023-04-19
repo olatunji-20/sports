@@ -2,7 +2,7 @@
   <section>
     <h2>ADD YOUR PRODUCTS FOR SALE HERE</h2>
     <div class="main">
-      <form @submit.prevent="test(), uploadProduct(formData)" enctype="multipart/form-data">
+      <form @submit.prevent="test" enctype="multipart/form-data">
         <input type="text" placeholder="product name" v-model="productName" /><br />
         <input type="text" placeholder="product maker" v-model="maker" /><br />
         <input type="number" placeholder="product price" v-model="productPrice" /><br />
@@ -41,6 +41,7 @@ export default {
     Productupload
   },
   methods: {
+    ...mapActions("products", ["uploadProduct"]),
     fileSelected() {
       const pic = this.$refs.picture.files[0];
       this.selectedImage = pic;
@@ -55,12 +56,12 @@ export default {
       formData.append("picture", this.selectedImage, this.selectedImage.name);
       
       try {
+        this.uploadProduct(formData)
         console.log("dfhuf" + "FORMDATA")
       } catch(error) {
         console.log(error)
       }
-    },
-    ...mapActions("products", ["uploadProduct"])
+    }
   }
 };
 </script>
