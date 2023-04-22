@@ -13,9 +13,9 @@
           name="img"
           ref="picture"
           v-on:change="fileSelected"
-        /><br /><br /><br />
+        /><br /><br />
+        <br />
         <button>SUBMIT</button>
-        <!-- <Productupload :productDetails="formData"/> -->
       </form>
     </div>
   </section>
@@ -24,6 +24,7 @@
 <script>
 import Productupload from '../components/Product-upload'
 import { mapActions } from 'vuex';
+import axios from "axios"
 
 export default {
   name: "Product",
@@ -47,14 +48,21 @@ export default {
       this.selectedImage = pic;
     },
     async test() {
-      const formData = new FormData();
+      const formData = new FormData();  
       formData.append("productName", this.productName);
       formData.append("maker", this.maker);
       formData.append("productPrice", this.productPrice);
       formData.append("discount", this.discount);
       formData.append("series", this.series);
       formData.append("picture", this.selectedImage, this.selectedImage.name);
-      this.uploadProduct(this.formData);
+
+      try {
+        await axios.post("http://localhost:5000", formData);
+        console.log("SENT")
+      }catch(error) {
+        console.log(error)
+      }
+
   }
 }
 }
