@@ -37,19 +37,30 @@ export async function getProduct2({commit}, id) {
 }
 
 
+
+
+
+
+
+
+
+
 export async function uploadProduct({}, formData) {
-    console.log("lalalal" + formData)
-    let url = "http://localhost:5000/"
-    try {
-        await axios.post(url, formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-        })
-    } catch (error) {
-        console.log(error)
-    }
+    console.log("lalalal" + " " + formData)
+    // let url = "http://localhost:5000/"
+    // try {
+    //     await axios.post(url, formData, {
+    //         headers: {
+    //             'Content-Type': 'multipart/form-data',
+    //         },
+    //     })
+    // } catch (error) {
+    //     console.log(error)
+    // }
 }
+
+
+
 
 
 

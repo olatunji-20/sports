@@ -54,16 +54,10 @@ export default {
       formData.append("discount", this.discount);
       formData.append("series", this.series);
       formData.append("picture", this.selectedImage, this.selectedImage.name);
-      
-      try {
-        this.uploadProduct(formData)
-        console.log("dfhuf" + "FORMDATA")
-      } catch(error) {
-        console.log(error)
-      }
-    }
+      this.uploadProduct(this.formData);
   }
-};
+}
+}
 </script>
 
 <style scoped>
