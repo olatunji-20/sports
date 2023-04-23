@@ -48,19 +48,19 @@ export async function getProduct2({commit}, id) {
 export async function uploadProduct({}, productDetails) {
     let shoki = JSON.stringify(productDetails)
     console.log("lalalal" + " " + shoki)
-    const formData = new FormData();  
-      formData.append("productName", shoki.productName);
-      formData.append("maker", shoki.maker);
-      formData.append("productPrice", shoki.productPrice);
-      formData.append("discount", shoki.discount);
-      formData.append("series", shoki.series);
-    //   formData.append("picture", shoki.selectedImage, shoki.selectedImage.name);
-    console.log(formData)
+    // const formData = new FormData();  
+    //   formData.append("productName", shoki.productName);
+    //   formData.append("maker", shoki.maker);
+    //   formData.append("productPrice", shoki.productPrice);
+    //   formData.append("discount", shoki.discount);
+    //   formData.append("series", shoki.series);
+    // //   formData.append("picture", shoki.selectedImage, shoki.selectedImage.name);
+    // console.log(formData)
 
 
     let url = "http://localhost:5000/"
     try {
-        await axios.post(url, formData)
+        await axios.post(url, shoki)
     } catch (error) {
         console.log(error)
     }

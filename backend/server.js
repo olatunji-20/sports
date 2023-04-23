@@ -20,6 +20,7 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
     try {
         console.log(req.body)
+        console.log(req.files.picture.name)
     }catch(err) {
         console.log(" hhhhhhhhh")
     }
