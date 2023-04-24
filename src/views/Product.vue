@@ -22,9 +22,8 @@
 </template>
 
 <script>
-import Productupload from '../components/Product-upload'
+import Productupload from '../components/Product-upload';
 import { mapActions } from 'vuex';
-import axios from "axios"
 
 export default {
   name: "Product",

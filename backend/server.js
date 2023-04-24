@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const upload = require("express-fileupload")
 
 const app = express();
 
@@ -10,7 +11,8 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+app.use(upload());
 
 
 app.get("/", (req, res) => {
@@ -20,7 +22,7 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
     try {
         console.log(req.body)
-        console.log(req.files.picture)
+        console.log(req.files.picture.name)
     }catch(err) {
         console.log(err)
     }
