@@ -20,9 +20,9 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
     try {
         console.log(req.body)
-        console.log(req.files.picture.name)
+        console.log(req.files.picture)
     }catch(err) {
-        console.log(" hhhhhhhhh")
+        console.log(err)
     }
 })
 

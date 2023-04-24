@@ -46,8 +46,9 @@ export async function getProduct2({commit}, id) {
 
 
 export async function uploadProduct({}, productDetails) {
-    let shoki = JSON.stringify(productDetails)
-    console.log("lalalal" + " " + shoki)
+    console.log(productDetails)
+    // let shoki = JSON.stringify(productDetails)
+    // console.log("lalalal" + " " + shoki)
     // const formData = new FormData();  
     //   formData.append("productName", shoki.productName);
     //   formData.append("maker", shoki.maker);
@@ -60,7 +61,7 @@ export async function uploadProduct({}, productDetails) {
 
     let url = "http://localhost:5000/"
     try {
-        await axios.post(url, shoki)
+        await axios.post(url, productDetails)
     } catch (error) {
         console.log(error)
     }
