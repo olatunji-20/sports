@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const upload = require("express-fileupload")
+const upload = require("express-fileupload");
+const Product = require('./models/products')
 
 const app = express();
 
