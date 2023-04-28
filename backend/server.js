@@ -67,6 +67,7 @@ app.post("/", (req, res) => {
 app.get("/all-products", (req, res) => {
     Product.find().then((result) => {
         console.log("ALL PRODUCTS " + result)
+        res.send(result)
     }).catch((err) => {
         console.log("ERROR " + err)
     })

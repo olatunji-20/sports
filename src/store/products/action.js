@@ -1,11 +1,17 @@
 import axios from "axios"
 
 export async function getProducts( {commit} ) {
-    let url = "https://my-json-server.typicode.com/olatunji-20/lovesports/sales-product"
+    let url = "http://localhost:5000/all-products"
+    // let url = "https://my-json-server.typicode.com/olatunji-20/lovesports/sales-product"
     // let url = "http://localhost:5000/sales-product"
     await axios.get(url).then((response) => {
-        let result = response.data;
-        commit("setProducts1", result)
+        try {
+            let result = response.data;
+            commit("setProducts1", result)
+            console.log(result)
+        }catch(err) {
+            console.log(err)
+        }
     })
 }
 
