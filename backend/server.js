@@ -30,10 +30,10 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
     try {
-        console.log(req.body)
-        console.log(req.files.picture.name)
+        
+        const submittedFile = req.files.picture;
 
-        const productImage = req.files.picture.name;
+        const productImageName = submittedFile.name;
         const productName = req.body.productName;
         const maker = req.body.maker;
         const productPrice = req.body.productPrice;
@@ -46,15 +46,34 @@ app.post("/", (req, res) => {
             productPrice: productPrice,
             discount: discount,
             series: series,
-            imageName: productImage
+            imageName: productImageName
         });
 
         product.save();
+
+        submittedFile.mv("./product-images/" + productName + productImageName, (err) => {
+            if(err) {
+                console.log("FILE COULD NOT BE UPLOADED" + err);
+            }else {
+                console.log("FILE SUCCESSFULLY UPLOADED");
+            }
+        } )
 
     } catch (err) {
         console.log(err)
     }
 });
+
+app.get("/all-products", (req, res) => {
+    Product.find().then((result) => {
+        console.log("ALL PRODUCTS " + result)
+    }).catch((err) => {
+        console.log("ERROR " + err)
+    })
+})
+
+
+
 
 app.listen(5000, () => {
     console.log("server running on port 5000.")
