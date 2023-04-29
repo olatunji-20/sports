@@ -54,7 +54,7 @@ export default {
         }
     },
     mounted() {
-        this.getProduct(this.$route.params.id)
+        this.getProduct(this.$route.params._id)
     }
 }
 </script>

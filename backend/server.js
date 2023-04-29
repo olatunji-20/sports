@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const upload = require("express-fileupload");
 const mongoose = require('mongoose');
 const Product = require('./models/products');
+const { product } = require("@/store/products/getters");
 
 const app = express();
 
@@ -13,6 +14,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => console.log("CONNECTED TO DB"))
         .catch((err) => console.log(err))
 
+
+
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
@@ -21,6 +24,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(upload());
+app.use(express.static(__dirname));
 
 
 app.get("/", (req, res) => {
@@ -66,10 +70,22 @@ app.post("/", (req, res) => {
 
 app.get("/all-products", (req, res) => {
     Product.find().then((result) => {
-        console.log("ALL PRODUCTS " + result)
+        // console.log("ALL PRODUCTS " + result)
         res.send(result)
     }).catch((err) => {
         console.log("ERROR " + err)
+    })
+});
+
+
+
+app.get("/one-product/:id", (req, res) => {
+    const productId = req.params.id;
+
+    Product.findById(productId).then((result) => {
+        res.send(result)
+    }).catch((err) => {
+        console.log("ERROR" + err)
     })
 })
 
