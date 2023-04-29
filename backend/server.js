@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const upload = require("express-fileupload");
 const mongoose = require('mongoose');
 const Product = require('./models/products');
-const { product } = require("@/store/products/getters");
 
 const app = express();
 

@@ -23,6 +23,8 @@ export default {
     width: 4.25rem;
     height: 2rem;
     background-color: red;
+    position: absolute;
+    top: 50px;
     color: white;
     padding: 0px;
     line-height: 0px;

@@ -31,10 +31,10 @@ export async function getProduct({commit}, id) {
     let url =  `http://localhost:5000/one-product/${id}`
     // let url = `https://my-json-server.typicode.com/olatunji-20/lovesports/sales-product/${id}`
     // let url = `http://localhost:5000/sales-product/${id}`
-    // await axios.get(url).then((response) => {
-    //     let result = response.data
-    //     commit("setProduct", result)
-    // })
+    await axios.get(url).then((response) => {
+        let result = response.data
+        commit("setProduct", result)
+    })
     console.log("IDIDIDID" + id)
 }
 
