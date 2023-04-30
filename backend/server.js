@@ -5,14 +5,14 @@ const upload = require("express-fileupload");
 const mongoose = require('mongoose');
 const Product = require('./models/products');
 
+
 const app = express();
 
 const dbURI = "mongodb+srv://sheriffdeen:sheriff1234@tunji.ce8aj.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => console.log("CONNECTED TO DB"))
-        .catch((err) => console.log(err))
-
+    .catch((err) => console.log(err))
 
 
 app.use(cors({
@@ -26,14 +26,16 @@ app.use(upload());
 app.use(express.static(__dirname));
 
 
+
+// THE ROUTES
 app.get("/", (req, res) => {
     res.send("BACKEND RUNNING!!!!!");
     console.log("BACKEND RUNNING");
 });
 
+
 app.post("/", (req, res) => {
     try {
-        
         const submittedFile = req.files.picture;
 
         const productImageName = submittedFile.name;
@@ -55,17 +57,18 @@ app.post("/", (req, res) => {
         product.save();
 
         submittedFile.mv("./product-images/" + productName + productImageName, (err) => {
-            if(err) {
+            if (err) {
                 console.log("FILE COULD NOT BE UPLOADED" + err);
-            }else {
+            } else {
                 console.log("FILE SUCCESSFULLY UPLOADED");
             }
-        } )
+        })
 
     } catch (err) {
         console.log(err)
     }
 });
+
 
 app.get("/all-products", (req, res) => {
     Product.find().then((result) => {
@@ -77,7 +80,6 @@ app.get("/all-products", (req, res) => {
 });
 
 
-
 app.get("/one-product/:id", (req, res) => {
     const productId = req.params.id;
 
@@ -87,8 +89,6 @@ app.get("/one-product/:id", (req, res) => {
         console.log("ERROR" + err)
     })
 })
-
-
 
 
 app.listen(5000, () => {

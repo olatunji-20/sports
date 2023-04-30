@@ -36,7 +36,7 @@
                         </div>
                     </transition>
                     <li>Apparel</li>
-                    <li><router-link to="/add-product"> Special deals</router-link></li>
+                    <li><router-link to="/add-product" class="add"> Add product</router-link></li>
                 </ul>
             </div>
         </div>
@@ -199,7 +199,10 @@ section {
     display: inline-block;
     padding: 0.6rem 1.875rem;
 }
-
+.add {
+    color: black;
+    text-decoration: none;
+}
 @media screen and (max-width: 750px) {
     .under li {
         font-size: 14px;
