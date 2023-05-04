@@ -4,7 +4,7 @@
         <Back />
         <div class="main">
             <div class="image">
-                <img :src="'http://localhost:5000/product-images/' + product.productName + product.imageName" :alt="product.productName" class="pic">
+                <img :src="'https://lovesports-api.onrender.com/product-images/' + product.productName + product.imageName" :alt="product.productName" class="pic">
                 <div class="discount">-{{ product.discount }}%</div>
             </div>
             <div class="details">

@@ -6,7 +6,7 @@
                 <div v-for="product in products" :key="product.id" class="board">
                     <div class="item">
                         <!-- <img :src="product.imageUrl" :alt="product.productName" class="prod" /> -->
-                        <img :src="'http://localhost:5000/product-images/' + product.productName + product.imageName" :alt="product.productName" class="prod" />
+                        <img :src="'https://lovesports-api.onrender.com/product-images/' + product.productName + product.imageName" :alt="product.productName" class="prod" />
                         <div v-if="product.discount" class="discount">-{{ product.discount }}%</div>
                         <div class="love"><img src="../../public/assets/love.png" class="luv" /></div>
                         <div class="free"><img class="motor" src="../../public/assets/motor.png" />

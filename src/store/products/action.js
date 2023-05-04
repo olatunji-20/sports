@@ -71,7 +71,7 @@ export async function uploadProduct({ }, productDetails) {
     formData.append("picture", productDetails.selectedImage, productDetails.selectedImage.name);
 
     // let url = "http://localhost:5000/"
-    let url = "https://lovesports-api.onrender.com/all-products"
+    let url = "https://lovesports-api.onrender.com/"
     // let url ="https://my-json-server.typicode.com/olatunji-20/lovesports/sales-product"
     try {
         await axios.post(url, formData)
