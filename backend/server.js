@@ -7,6 +7,7 @@ const Product = require('./models/products');
 
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 const dbURI = "mongodb+srv://sheriffdeen:sheriff1234@tunji.ce8aj.mongodb.net/?retryWrites=true&w=majority";
 
@@ -91,6 +92,6 @@ app.get("/one-product/:id", (req, res) => {
 })
 
 
-app.listen(5000, () => {
-    console.log("server running on port 5000.")
-});
+app.listen(PORT, () => {
+    console.log(`server running on port + ${PORT}`);
+}); 
