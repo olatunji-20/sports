@@ -1,8 +1,9 @@
 <template>
-        <button v-on:click="loud(id)">Delete Product</button>
+        <button v-on:click="deleteProduct(id)">Delete Product</button>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
     name: "Delete",
     data() {
@@ -14,9 +15,7 @@ export default {
         id: Number
     },
     methods: {
-        loud(id) {
-            console.log("DDDD " + id)
-        }
+        ...mapActions("products", ["deleteProduct"])
     }
 }
 </script>

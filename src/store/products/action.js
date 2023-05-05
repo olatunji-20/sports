@@ -58,6 +58,14 @@ export async function getProduct2({ commit }, id) {
     })
 }
 
+export async function deleteProduct({}, id){
+    console.log("WWW "+ id)
+    let url = `https://lovesports-api.onrender.com/one-product/${id}`
+
+    await axios.delete(url).then((response) => {
+        console.log(response)
+    })
+}
 
 export async function uploadProduct({ }, productDetails) {
     console.log(productDetails)
