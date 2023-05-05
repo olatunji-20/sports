@@ -17,6 +17,9 @@
                 </div>
             </div>
             <Addcart :product="product" :quantity="quantity" v-on:add-to-cart="addToCart({quantity, product})" />
+            <div class="delete">
+                <Delete :id="product._id" />
+            </div>
         </div>
         <Footbar />
     </section>
@@ -27,6 +30,7 @@ import { mapActions, mapState } from 'vuex';
 import Navbar from '@/components/Navbar.vue';
 import Footbar from '@/components/Footbar.vue';
 import Addcart from '@/components/Addcart.vue';
+import Delete from '@/components/Delete.vue';
 import Back from '@/components/Back.vue';
 export default {
     name: 'Stand',
@@ -39,7 +43,8 @@ export default {
         Navbar,
         Footbar,
         Addcart,
-        Back
+        Back,
+        Delete
     },
     computed: {
         ...mapState("products", ["product"])
@@ -54,7 +59,7 @@ export default {
         }
     },
     mounted() {
-        this.getProduct2(this.$route.params.id)
+        this.getProduct2(this.$route.params._id)
     }
 }
 </script>
