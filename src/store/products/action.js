@@ -1,4 +1,5 @@
-import axios from "axios"
+import axios from "axios";
+import router from "../../router"
 
 
 export async function getProducts({ commit }) {
@@ -83,6 +84,7 @@ export async function uploadProduct({ }, productDetails) {
     // let url ="https://my-json-server.typicode.com/olatunji-20/lovesports/sales-product"
     try {
         await axios.post(url, formData)
+        router.push('/')
     } catch (error) {
         console.log(error)
     }
