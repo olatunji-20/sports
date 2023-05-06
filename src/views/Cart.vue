@@ -6,7 +6,8 @@
             <h1 style="text-decoration: underline">Number of items in cart: {{ cart.length }}</h1>
             <div v-for="product in cart" :key="product.id" class="container">
                 <div class="image">
-                    <img :src="'https://lovesports-api.onrender.com/product-images/' + product.productName + product.imageName" :alt="product.productName" class="cart-image">
+                    <!-- <img :src="'https://lovesports-api.onrender.com/product-images/' + product.productName + product.imageName" :alt="product.productName" class="cart-image"> -->
+                    <img :src="'https://raw.githubusercontent.com/olatunji-20/lovesport-backend/master/product-images/' + product.imageName" :alt="product.productName" class="cart-image">
                 </div>
                 <div class="infos">
                     <h3>Name: {{ product.productName }}</h3>

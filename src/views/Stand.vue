@@ -4,7 +4,8 @@
         <Back />
         <div class="main">
             <div class="image">
-                <img :src="'https://lovesports-api.onrender.com/product-images/' + product.productName + product.imageName" :alt="product.productName" class="pic">
+                <!-- <img :src="'https://lovesports-api.onrender.com/product-images/' + product.productName + product.imageName" :alt="product.productName" class="pic"> -->
+                <img :src="'https://raw.githubusercontent.com/olatunji-20/lovesport-backend/master/product-images/' + product.imageName" :alt="product.productName" class="pic">
                 <div class="discount">-{{ product.discount }}%</div>
             </div>
             <div class="details">
@@ -131,8 +132,8 @@ export default {
 }
 
 .delete {
-    width: 300px;
-    height: 60px;
+    width: 200px;
+    height: 30px;
     background: powderblue;
     float: right;
     margin-bottom: 20px;

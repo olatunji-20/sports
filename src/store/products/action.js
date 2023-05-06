@@ -1,5 +1,5 @@
 import axios from "axios";
-import router from "../../router"
+import router from "../../router";
 
 
 export async function getProducts({ commit }) {
@@ -28,7 +28,8 @@ export async function getProducts2({ commit }) {
     let url = "https://lovesports-api.onrender.com/all-products"
     await axios.get(url).then((response) => {
         let result = response.data;
-        commit("setProducts2", result)
+        let patch = result.reverse();
+        commit("setProducts2", patch)
     })
 }
 
@@ -83,10 +84,10 @@ export async function uploadProduct({ }, productDetails) {
     let url = "https://lovesports-api.onrender.com/"
     // let url ="https://my-json-server.typicode.com/olatunji-20/lovesports/sales-product"
     try {
-        await axios.post(url, formData)
-        router.push("/")
+        await axios.post(url, formData);
+        router.push('/');
     } catch (error) {
-        console.log(error)
+        alert("Sorry, your product could not be uploaded at this moment.");
     }
 
 }
