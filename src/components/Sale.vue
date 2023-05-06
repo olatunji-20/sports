@@ -21,7 +21,7 @@
                     <h5 style="display: inline;">{{ product.maker }} |</h5>
                     <p style="display: inline">{{ product.series }}</p>
                     <p>Sizes: <span style="font-weight: bolder">S M L XL</span></p>
-                    <router-link :to="'/'+route+'/' + product._id"><button class="view">View the item</button>
+                    <router-link :to="'/'+route+'/' + product._id"><button class="view">View this item</button>
                     </router-link>
                 </div>
             </div>
