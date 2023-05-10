@@ -2,17 +2,14 @@
   <div class="home">
     <Navbar />
     <Categories />
-    <VuePreloader v-if="loading"
-      background-color="#091a28"
-      color="#099999"
-      transition-type="fade-up"
-      :loading-speed="25"
-      :transition-speed="1400"
-      @loading-is-over="loadingIsOver"
-      @transition-is-over="transitionIsOver"
-    >
-  <span>lahudyugfyugr</span></VuePreloader>
-    <Sale v-else :products="products1" route="Stand" topic="Sales item" />
+    <Suspense>
+      <template #default>
+        <Sale :products="products1" route="Stand" topic="Sales item" />
+      </template>
+      <template #fallback>
+        <h5>Loading</h5>
+      </template>
+    </Suspense>
     <Sale :products="products2" route="Standd" topic="Latest products" />
     <Sponsors />
     <Sale :products="products1" route="Stand" topic="Recently viewed" />
@@ -21,9 +18,6 @@
 </template>
 
 <script>
-import { VuePreloader } from 'vue-preloader';
-// import '@/node_modules/vue-preloader/dist/style.css'
-
 import Navbar from '../components/Navbar.vue';
 import Categories from '../components/Categories.vue';
 import Sale from '../components/Sale.vue';
@@ -35,7 +29,7 @@ export default {
   name: 'HomeView',
   data() {
     return {
-      loading: true
+      
     }
   },
   components: {
@@ -43,8 +37,7 @@ export default {
     Categories,
     Sale,
     Footbar,
-    Sponsors,
-    VuePreloader
+    Sponsors
   },
   computed: {
     ...mapGetters("products", ["products1", "products2"])
@@ -55,7 +48,6 @@ export default {
   async created() {
     this.products1 = await this.getProducts();
     this.products2 = await this.getProducts2();
-    this.loading = false;
   }
 }
 </script>
