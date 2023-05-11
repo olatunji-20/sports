@@ -2,17 +2,19 @@
   <div class="home">
     <Navbar />
     <Categories />
-    <Suspense>
-      <template #default>
-        <Sale :products="products1" route="Stand" topic="Sales item" />
-      </template>
-      <template #fallback>
-        <h5>Loading</h5>
-      </template>
-    </Suspense>
-    <Sale :products="products2" route="Standd" topic="Latest products" />
+    <div class="lala">
+      <Preloader v-if="loading" topic="sales item" />
+      <Sale :products="products1" route="Stand" topic="Sales item" v-else />
+    </div>
+    <div class="lala">
+      <Preloader v-if="loading" topic="latest products" />
+      <Sale :products="products2" route="Standd" topic="Latest products" v-else />
+    </div>
     <Sponsors />
-    <Sale :products="products1" route="Stand" topic="Recently viewed" />
+    <div class="lala">
+      <Preloader v-if="loading" topic="recently viewed" />
+      <Sale :products="products1" route="Stand" topic="Recently viewed" v-else />
+    </div>
     <Footbar />
   </div>
 </template>
@@ -22,22 +24,24 @@ import Navbar from '../components/Navbar.vue';
 import Categories from '../components/Categories.vue';
 import Sale from '../components/Sale.vue';
 import Footbar from '../components/Footbar.vue';
-import Sponsors from '../components/Sponsors.vue'
+import Sponsors from '../components/Sponsors.vue';
+import Preloader from '../components/Preloader.vue'
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'HomeView',
   data() {
     return {
-      
+      loading: true
     }
   },
   components: {
     Navbar,
     Categories,
+    Sponsors,
+    Preloader,
     Sale,
-    Footbar,
-    Sponsors
+    Footbar
   },
   computed: {
     ...mapGetters("products", ["products1", "products2"])
@@ -48,6 +52,14 @@ export default {
   async created() {
     this.products1 = await this.getProducts();
     this.products2 = await this.getProducts2();
+    this.loading = false
   }
 }
 </script>
+
+
+<style scoped>
+.lala {
+  /* border: 2px solid red; */
+}
+</style>
